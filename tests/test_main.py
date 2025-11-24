@@ -26,6 +26,7 @@ EXPECTED_ERRORS = {
     "consider-merging-classes-inherited": 2,
     "context-overridden": 3,
     "development-status-allowed": 1,
+    "env-ref-assigned-variable": 3,
     "except-pass": 3,
     "external-request-timeout": 51,
     "invalid-commit": 4,

@@ -1,4 +1,4 @@
-[//]: # (start-badges)
+@[//]: # (start-badges)
 
 [![Build Status](https://github.com/OCA/pylint-odoo/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/OCA/pylint-odoo/actions/workflows/test.yml?query=branch%3Amain)
 [![codecov](https://codecov.io/gh/OCA/pylint-odoo/branch/main/graph/badge.svg)](https://codecov.io/gh/OCA/pylint-odoo)
@@ -28,6 +28,7 @@ consider-merging-classes-inherited | Consider merging classes inherited to "%s" 
 context-overridden | Context overridden using dict. Better using kwargs `with_context(**%s)` or `with_context(key=value)` | W8121
 deprecated-odoo-model-method | %s has been deprecated by Odoo. Please look for alternatives. | W8160
 development-status-allowed | Manifest key development_status "%s" not allowed. Use one of: %s. | C8111
+env-ref-assigned-variable | Avoid assigning `self.env[%s]` to a variable. Use `self.env[%s]` directly instead. | W8165
 except-pass | pass into block except. If you really need to use the pass consider logging that exception | W8138
 external-request-timeout | Use of external request method `%s` without timeout. It could wait for a long time | E8106
 invalid-commit | Use of cr.commit() directly - More info https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst#never-commit-the-transaction | E8102
@@ -178,6 +179,12 @@ Checks valid only for odoo <= 13.0
  * development-status-allowed
 
     - https://github.com/OCA/pylint-odoo/blob/v9.2.0/testing/resources/test_repo/broken_module2/__openerp__.py#L6 Manifest key development_status "InvalidDevStatus" not allowed. Use one of: Alpha, Beta, Mature, Production/Stable.
+
+ * env-ref-assigned-variable
+
+    - https://github.com/OCA/pylint-odoo/blob/v9.3.22/testing/resources/test_repo/broken_module/models/env_ref_test.py#L12 Avoid assigning `self.env['product.product']` to a variable. Use `self.env['product.product']` directly instead.
+    - https://github.com/OCA/pylint-odoo/blob/v9.3.22/testing/resources/test_repo/broken_module/models/env_ref_test.py#L13 Avoid assigning `self.env['res.partner']` to a variable. Use `self.env['res.partner']` directly instead.
+    - https://github.com/OCA/pylint-odoo/blob/v9.3.22/testing/resources/test_repo/broken_module/models/env_ref_test.py#L19 Avoid assigning `self.env['product.product']` to a variable. Use `self.env['product.product']` directly instead.
 
  * except-pass
 
